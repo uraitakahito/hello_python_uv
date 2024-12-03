@@ -1,0 +1,32 @@
+{
+  "recommendations": [
+    //
+    // Python
+    //
+    // https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff
+    "charliermarsh.ruff",
+    // https://marketplace.visualstudio.com/items?itemName=ms-python.python
+    //   Set python.analysis.extraPaths and specify extra search paths for import resolution
+    //   https://code.visualstudio.com/docs/python/settings-reference
+    "ms-python.python",
+    //
+    // Others
+    //
+    // https://marketplace.visualstudio.com/items?itemName=dbankier.vscode-quick-select
+    "dbankier.vscode-quick-select",
+    // https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode
+    "esbenp.prettier-vscode",
+    // https://marketplace.visualstudio.com/items?itemName=GitHub.copilot
+    "GitHub.copilot",
+    // https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github
+    "GitHub.vscode-pull-request-github",
+    // https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-github-actions
+    "GitHub.vscode-github-actions",
+    // https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
+    "redhat.vscode-yaml",
+    // https://marketplace.visualstudio.com/items?itemName=timonwong.shellcheck
+    "timonwong.shellcheck",
+    // https://marketplace.visualstudio.com/items?itemName=usernamehw.errorlens
+    "usernamehw.errorlens"
+  ]
+}

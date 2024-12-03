@@ -14,6 +14,7 @@ Run the following commands inside the Docker containers as needed:
 
 ```console
 % uv run examples/cow.py
+% uv run pytest
 ```
 
 Select **[Dev Containers: Attach to Running Container](https://code.visualstudio.com/docs/devcontainers/attach-container#_attach-to-a-docker-container)** through the **Command Palette (Shift + Command + p)**

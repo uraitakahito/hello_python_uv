@@ -1,0 +1,24 @@
+{
+  //
+  // Prettier
+  //
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
+
+  //
+  // Python
+  //
+  // If a warning appears, please run "Python: Clear Workspace Interpreter Setting" from the command palette.
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  "python.analysis.extraPaths": ["/app/.venv/lib/python3.12/site-packages"],
+
+  //
+  // Ruff
+  //
+  // https://docs.astral.sh/ruff/editors/settings/#interpreter
+  "ruff.interpreter": ["${workspaceFolder}/.venv/bin/python"],
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": true
+  }
+}

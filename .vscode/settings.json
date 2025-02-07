@@ -11,6 +11,22 @@
   "editor.wordWrap": "on",
 
   //
+  // JSON/JSONC
+  //
+  "[json]": {
+    "editor.detectIndentation": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false
+  },
+  "[jsonc]": {
+    "editor.detectIndentation": true,
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false
+  },
+
+  //
   // Prettier
   //
   "editor.defaultFormatter": "esbenp.prettier-vscode",

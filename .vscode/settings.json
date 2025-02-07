@@ -5,6 +5,12 @@
 //   Linux $HOME/.config/Code/User/settings.json
 {
   //
+  // Basic Editing
+  //
+  // https://code.visualstudio.com/docs/editor/codebasics#_how-do-i-turn-on-word-wrap
+  "editor.wordWrap": "on",
+
+  //
   // Prettier
   //
   "editor.defaultFormatter": "esbenp.prettier-vscode",

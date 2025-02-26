@@ -13,6 +13,14 @@
     "redhat.vscode-yaml",
 
     //
+    // Mermaid
+    //
+    // https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid
+    "bierner.markdown-mermaid",
+    // https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting
+    "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+
+    //
     // Python
     //
     // https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff

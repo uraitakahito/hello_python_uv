@@ -14,5 +14,9 @@
       // "python": "${workspaceFolder}/.venv/bin/python"
       "python": "${config:python.defaultInterpreterPath}"
     }
+
+    //
+    // If you want to debug pytest in VSCode, please select `Debug Tests` from the `Testing` tab
+    //
   ]
 }

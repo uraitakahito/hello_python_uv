@@ -1,5 +1,6 @@
 ```console
 % uv run examples/cow.py
+% uv run examples/use-git-library.py
 % uv run pytest
 ```
 

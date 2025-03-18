@@ -3,10 +3,11 @@ name = "hello-python-uv"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 dependencies = [
     "cowsay>=6.1",
     "hello-python-library",
+    "hello-python-uv-library",
 ]
 
 [dependency-groups]
@@ -16,3 +17,4 @@ dev = [
 
 [tool.uv.sources]
 hello-python-library = { git = "https://github.com/uraitakahito/hello_python_library" }
+hello-python-uv-library = { git = "https://github.com/uraitakahito/hello_python_uv_library" }

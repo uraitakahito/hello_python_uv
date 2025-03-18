@@ -1,6 +1,6 @@
 version = 1
 revision = 1
-requires-python = ">=3.12"
+requires-python = ">=3.13"
 
 [[package]]
 name = "colorama"
@@ -20,6 +20,11 @@ wheels = [
 ]
 
 [[package]]
+name = "hello-python-add"
+version = "0.1.1"
+source = { git = "https://github.com/uraitakahito/hello_python_add#5da89a1ec3001aba57ceb28cb8275b324a6ed704" }
+
+[[package]]
 name = "hello-python-library"
 version = "0.2"
 source = { git = "https://github.com/uraitakahito/hello_python_library#75a2ce8faf7f581af197667fa57c11c74177f7c5" }
@@ -31,6 +36,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "cowsay" },
     { name = "hello-python-library" },
+    { name = "hello-python-uv-library" },
 ]
 
 [package.dev-dependencies]
@@ -42,10 +48,19 @@ dev = [
 requires-dist = [
     { name = "cowsay", specifier = ">=6.1" },
     { name = "hello-python-library", git = "https://github.com/uraitakahito/hello_python_library" },
+    { name = "hello-python-uv-library", git = "https://github.com/uraitakahito/hello_python_uv_library" },
 ]
 
 [package.metadata.requires-dev]
 dev = [{ name = "pytest", specifier = ">=8.3.4" }]
+
+[[package]]
+name = "hello-python-uv-library"
+version = "0.1.4"
+source = { git = "https://github.com/uraitakahito/hello_python_uv_library#a887ef84fe1e378df24aa881e15abff80e13b53e" }
+dependencies = [
+    { name = "hello-python-add" },
+]
 
 [[package]]
 name = "iniconfig"

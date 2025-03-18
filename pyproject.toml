@@ -8,6 +8,7 @@ dependencies = [
     "cowsay>=6.1",
     "hello-python-library",
     "hello-python-uv-library",
+    "stackprinter>=0.2.12",
 ]
 
 [dependency-groups]

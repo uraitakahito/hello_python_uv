@@ -31,6 +31,7 @@ source = { virtual = "." }
 dependencies = [
     { name = "cowsay" },
     { name = "hello-python-library" },
+    { name = "hello-python-uv-library" },
 ]
 
 [package.dev-dependencies]
@@ -42,10 +43,16 @@ dev = [
 requires-dist = [
     { name = "cowsay", specifier = ">=6.1" },
     { name = "hello-python-library", git = "https://github.com/uraitakahito/hello_python_library" },
+    { name = "hello-python-uv-library", git = "https://github.com/uraitakahito/hello_python_uv_library" },
 ]
 
 [package.metadata.requires-dev]
 dev = [{ name = "pytest", specifier = ">=8.3.4" }]
+
+[[package]]
+name = "hello-python-uv-library"
+version = "0.1.0"
+source = { git = "https://github.com/uraitakahito/hello_python_uv_library#6bdda16758d367b5caf329b442ee6d23714c0c77" }
 
 [[package]]
 name = "iniconfig"

@@ -17,18 +17,18 @@
     "remcohaszing.schemastore",
 
     //
-    // YAML
-    //
-    // https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
-    "redhat.vscode-yaml",
-
-    //
     // Mermaid
     //
     // https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid
     "bierner.markdown-mermaid",
     // https://marketplace.visualstudio.com/items?itemName=bpruitt-goddard.mermaid-markdown-syntax-highlighting
     "bpruitt-goddard.mermaid-markdown-syntax-highlighting",
+
+    //
+    // YAML
+    //
+    // https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml
+    "redhat.vscode-yaml",
 
     //
     // Others

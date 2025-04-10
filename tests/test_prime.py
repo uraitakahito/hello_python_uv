@@ -1,5 +1,6 @@
 import pytest
-from prime import is_prime
+
+from hello_python_uv.prime import is_prime
 
 
 @pytest.mark.parametrize(

@@ -9,7 +9,7 @@ dependencies = [
     "hello-python-library",
     "hello-python-uv-library",
     "stackprinter>=0.2.12",
-]
+    ]
 
 [dependency-groups]
 dev = [

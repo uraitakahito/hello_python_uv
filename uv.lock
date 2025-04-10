@@ -26,8 +26,8 @@ source = { git = "https://github.com/uraitakahito/hello_python_add#5da89a1ec3001
 
 [[package]]
 name = "hello-python-library"
-version = "0.2"
-source = { git = "https://github.com/uraitakahito/hello_python_library#75a2ce8faf7f581af197667fa57c11c74177f7c5" }
+version = "0.2.2"
+source = { git = "https://github.com/uraitakahito/hello_python_library#70cf62c7cdb87233fc6cc9538ccadd5a5d46b995" }
 
 [[package]]
 name = "hello-python-uv"

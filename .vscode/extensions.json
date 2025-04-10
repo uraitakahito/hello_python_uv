@@ -46,7 +46,7 @@
     // https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff
     "charliermarsh.ruff",
     // https://marketplace.visualstudio.com/items?itemName=ms-python.mypy-type-checker
-    "ms-python.mypy-type-checker",
+    // "ms-python.mypy-type-checker",
     // https://marketplace.visualstudio.com/items?itemName=ms-python.python
     //   Set python.analysis.extraPaths and specify extra search paths for import resolution
     //   https://code.visualstudio.com/docs/python/settings-reference

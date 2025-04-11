@@ -51,5 +51,7 @@
     //   Set python.analysis.extraPaths and specify extra search paths for import resolution
     //   https://code.visualstudio.com/docs/python/settings-reference
     "ms-python.python",
+    // https://marketplace.visualstudio.com/items/?itemName=ms-python.vscode-pylance
+    "ms-python.vscode-pylance",
   ]
 }

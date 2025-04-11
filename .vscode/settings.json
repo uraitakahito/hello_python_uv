@@ -37,9 +37,37 @@
   //
   // If a warning appears, please run "Python: Clear Workspace Interpreter Setting" from the command palette.
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
-  "python.analysis.extraPaths": ["/app/.venv/lib/python3.12/site-packages"],
   // If you want to debug pytest in VSCode, please select `Debug Tests` from the `Testing` tab
   "python.testing.pytestEnabled": true,
+  //
+  // Plylance
+  //
+  "python.analysis.aiCodeActions": {
+    "implementAbstractClasses": true,
+    "generateSymbol": true,
+    "generateDocstring": true
+  },
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.autoSearchPaths": true,
+  "python.analysis.completeFunctionParens": true,
+  "python.analysis.diagnosticMode": "openFilesOnly",
+  "python.analysis.displayEnglishDiagnostics": true,
+  "python.analysis.enablePytestSupport": true,
+  // "python.analysis.exclude": [],
+  "python.analysis.extraPaths": ["/app/.venv/lib/python3.12/site-packages"],
+  // "python.analysis.include":[
+  //   "${workspaceFolder}/.venv/lib/python3.12/site-packages",
+  // ],
+  "python.analysis.inlayHints.callArgumentNames": "all",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.languageServerMode": "full",
+  // https://code.visualstudio.com/docs/configure/themes#_editor-semantic-highlighting
+  "editor.semanticHighlighting.enabled": true,
+  // "python.analysis.stubPath": "${workspaceFolder}/typings",
+  "python.analysis.supportRestructuredText": true,
+  "python.analysis.typeCheckingMode": "strict",
 
   //
   // Ruff

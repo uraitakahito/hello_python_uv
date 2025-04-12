@@ -9,13 +9,15 @@ dependencies = [
     "hello-python-library",
     "hello-python-uv-library",
     "stackprinter>=0.2.12",
-]
+    ]
 
 [dependency-groups]
 dev = [
-    "mypy>=1.15.0",
     "pytest>=8.3.4",
 ]
+
+# [tool.mypy]
+# mypy_path = "src"
 
 [tool.uv.sources]
 hello-python-library = { git = "https://github.com/uraitakahito/hello_python_library" }

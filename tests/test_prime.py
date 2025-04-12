@@ -1,5 +1,6 @@
 import pytest
-from prime import is_prime
+
+from hello_python_uv.prime import is_prime
 
 
 @pytest.mark.parametrize(
@@ -17,5 +18,5 @@ from prime import is_prime
         (10, False),
     ],
 )
-def test_is_prime(number, expected):
+def test_is_prime(number: int, expected: bool):
     assert is_prime(number) == expected

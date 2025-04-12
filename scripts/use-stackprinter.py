@@ -1,3 +1,4 @@
+# type: ignore
 """
 We can use stackprinter (https://github.com/cknd/stackprinter/) to enhance
 the printed information that we get when an exeption is thrown

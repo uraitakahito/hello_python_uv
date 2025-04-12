@@ -53,7 +53,6 @@
   "python.analysis.diagnosticMode": "openFilesOnly",
   "python.analysis.displayEnglishDiagnostics": true,
   "python.analysis.enablePytestSupport": true,
-  // "python.analysis.exclude": [],
   "python.analysis.extraPaths": ["/app/.venv/lib/python3.12/site-packages"],
   // "python.analysis.include":[
   //   "${workspaceFolder}/.venv/lib/python3.12/site-packages",

@@ -1,22 +1,22 @@
 {
-  // Use IntelliSense to learn about possible attributes.
-  // Hover to view descriptions of existing attributes.
-  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "Python: Current File",
-      "type": "debugpy",
-      "request": "launch",
-      "program": "${file}",
-      "console": "integratedTerminal",
-      "cwd": "${fileDirname}",
-      // "python": "${workspaceFolder}/.venv/bin/python"
-      "python": "${config:python.defaultInterpreterPath}"
-    }
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Current File",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "cwd": "${fileDirname}",
+            // "python": "${workspaceFolder}/.venv/bin/python"
+            "python": "${config:python.defaultInterpreterPath}"
+        }
 
-    //
-    // If you want to debug pytest in VSCode, please select `Debug Tests` from the `Testing` tab
-    //
-  ]
+        //
+        // If you want to debug pytest in VSCode, please select `Debug Tests` from the `Testing` tab
+        //
+    ]
 }

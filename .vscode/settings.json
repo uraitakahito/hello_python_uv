@@ -53,10 +53,11 @@
     "python.analysis.diagnosticMode": "openFilesOnly",
     "python.analysis.displayEnglishDiagnostics": true,
     "python.analysis.enablePytestSupport": true,
-    "python.analysis.extraPaths": ["/app/.venv/lib/python3.12/site-packages"],
-    // "python.analysis.include":[
-    //   "${workspaceFolder}/.venv/lib/python3.12/site-packages",
-    // ],
+    // Match the version in ${workspaceFolder}/.python-version with the version in extraPaths
+    "python.analysis.extraPaths": ["${workspaceFolder}/.venv/lib/python3.13/site-packages"],
+    // Paths of directories or files that should be included. If no paths are specified,
+    // Pylance defaults to the directory that contains workspace root.
+    // "python.analysis.include": ["src/**/*", "scripts/**/*"],
     "python.analysis.inlayHints.callArgumentNames": "all",
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.inlayHints.pytestParameters": true,

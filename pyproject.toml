@@ -5,19 +5,16 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "cowsay>=6.1",
     "hello-python-library",
     "hello-python-uv-library",
+    "numpy>=2.2.6",
     "stackprinter>=0.2.12",
-    ]
+]
 
 [dependency-groups]
 dev = [
     "pytest>=8.3.4",
 ]
-
-# [tool.mypy]
-# mypy_path = "src"
 
 [tool.uv.sources]
 hello-python-library = { git = "https://github.com/uraitakahito/hello_python_library" }

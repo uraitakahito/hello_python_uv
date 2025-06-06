@@ -5,7 +5,6 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "cowsay>=6.1",
     "hello-python-library",
     "hello-python-uv-library",
     "numpy>=2.2.6",

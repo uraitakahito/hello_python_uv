@@ -12,14 +12,6 @@ wheels = [
 ]
 
 [[package]]
-name = "cowsay"
-version = "6.1"
-source = { registry = "https://pypi.org/simple" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/f1/13/63c0a02c44024ee16f664e0b36eefeb22d54e93531630bd99e237986f534/cowsay-6.1-py3-none-any.whl", hash = "sha256:274b1e6fc1b966d53976333eb90ac94cb07a450a700b455af9fbdf882244b30a", size = 25560 },
-]
-
-[[package]]
 name = "hello-python-add"
 version = "0.1.1"
 source = { git = "https://github.com/uraitakahito/hello_python_add#5da89a1ec3001aba57ceb28cb8275b324a6ed704" }
@@ -34,7 +26,6 @@ name = "hello-python-uv"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
-    { name = "cowsay" },
     { name = "hello-python-library" },
     { name = "hello-python-uv-library" },
     { name = "numpy" },
@@ -48,7 +39,6 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "cowsay", specifier = ">=6.1" },
     { name = "hello-python-library", git = "https://github.com/uraitakahito/hello_python_library" },
     { name = "hello-python-uv-library", git = "https://github.com/uraitakahito/hello_python_uv_library" },
     { name = "numpy", specifier = ">=2.2.6" },

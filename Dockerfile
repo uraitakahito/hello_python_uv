@@ -1,5 +1,5 @@
-# Debian 12.10
-FROM debian:bookworm-20250407
+# Debian 12.11
+FROM debian:bookworm-20250610
 
 ARG user_name=developer
 ARG user_id
@@ -7,7 +7,7 @@ ARG group_id
 ARG dotfiles_repository="https://github.com/uraitakahito/dotfiles.git"
 ARG features_repository="https://github.com/uraitakahito/features.git"
 ARG extra_utils_repository="https://github.com/uraitakahito/extra-utils.git"
-ARG variant=3.12.5
+ARG variant=3.13
 
 #
 # Git

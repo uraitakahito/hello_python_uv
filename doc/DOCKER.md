@@ -19,7 +19,7 @@ Use [fdshell](https://github.com/uraitakahito/dotfiles/blob/37c4142038c658c468ad
 Run the following commands inside the Docker containers as needed:
 
 ```console
-% uv run examples/cow.py
+% uv run scripts/hello-numpy.py
 % uv run pytest
 ```
 

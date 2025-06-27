@@ -16,6 +16,19 @@
             // When omitted or set to true (the default), restricts debugging to user-written code only.
             // Set to false to also enable debugging of standard library functions.
             "justMyCode": false
+        },
+        {
+            "name": "hello-args",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/scripts/hello-args.py",
+            "args": ["1", "2", "da"],
+            "console": "integratedTerminal",
+            // "python": "${workspaceFolder}/.venv/bin/python"
+            "python": "${config:python.defaultInterpreterPath}",
+            // When omitted or set to true (the default), restricts debugging to user-written code only.
+            // Set to false to also enable debugging of standard library functions.
+            "justMyCode": false
         }
 
         //

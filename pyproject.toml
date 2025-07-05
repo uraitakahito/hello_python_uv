@@ -14,6 +14,50 @@ dependencies = [
 [dependency-groups]
 dev = [
     "pytest>=8.3.4",
+    "ruff>=0.12.2",
+]
+
+[tool.ruff]
+# Maximum line length
+line-length = 120
+
+# Directories to exclude
+exclude = [
+    "docs",
+    "typings/**/*",
+    "setup.py",
+]
+
+[tool.ruff.lint]
+# Types of errors to check
+select = [
+    "ALL"
+]
+# Types of errors to exclude
+ignore = [
+    "BLE001", # Do not catch blind exception
+    "D100",   # Missing docstring in public module
+    "D400",   # First line should end with a period
+    "D415",   # First line should end with a period, question mark, or exclamation point
+    "ERA001", # Commented-out code detected - Detects commented-out code. Excluded to allow debug code and TODO comments during development
+    "FIX002", # Line contains TODO, consider resolving the issue - Allow TODO comments
+    "RUF001", # Ambiguous unicode character - Allow ambiguous Unicode characters (full-width characters, etc.)
+    "TD003",  # Missing issue link for this TODO - Allow TODO comments without links
+    "TRY300", # try-consider-else - Excluded due to conflict with RET505
+]
+
+# Per-file error exclusions
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["F401"]  # Unused import - Allow unused imports in __init__.py (for package public API definition)
+"tests/**/*.py" = [
+    "ARG001",  # Unused function argument - Allow unused arguments in tests
+    "D101",    # Missing docstring in public class - Disable docstring requirement for test classes
+    "D102",    # Missing docstring in public method - Disable docstring requirement for test methods
+    "D103",    # Missing docstring in public function - Disable docstring requirement for test functions
+    "EM101",   # Raw string in exception - Allow exception string literals in tests
+    "PLR2004", # Magic value comparison - Allow magic numbers in tests
+    "S101",    # Use of assert detected - Allow assert usage in tests
+    "SLF001",  # Private member access - Allow internal implementation access in tests
 ]
 
 [tool.uv.sources]

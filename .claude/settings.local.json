@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(uv run ruff check:*)",
+      "Bash(uv run pytest:*)",
+      "Bash(find:*)",
+      "Bash(grep:*)",
+      "WebFetch(domain:docs.pydantic.dev)",
+      "Bash(ruff check:*)",
+      "mcp__ide__getDiagnostics",
+      "Bash(git check-ignore:*)"
+    ],
+    "deny": []
+  }
+}

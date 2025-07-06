@@ -55,6 +55,8 @@ ignore = [
     "D102",    # Missing docstring in public method - Disable docstring requirement for test methods
     "D103",    # Missing docstring in public function - Disable docstring requirement for test functions
     "EM101",   # Raw string in exception - Allow exception string literals in tests
+    "INP001",  # Implicit namespace package - __init__.py is not required for pytest
+    "PLC0415", # Import inside function - Allow delayed import in tests
     "PLR2004", # Magic value comparison - Allow magic numbers in tests
     "S101",    # Use of assert detected - Allow assert usage in tests
     "SLF001",  # Private member access - Allow internal implementation access in tests

@@ -7,7 +7,7 @@ ARG group_id
 ARG dotfiles_repository="https://github.com/uraitakahito/dotfiles.git"
 ARG features_repository="https://github.com/uraitakahito/features.git"
 ARG extra_utils_repository="https://github.com/uraitakahito/extra-utils.git"
-ARG variant=3.13
+ARG python_variant=3.13
 
 #
 # Git
@@ -61,7 +61,7 @@ USER ${user_name}
 #
 # Install Python
 #
-RUN uv python install ${variant}
+RUN uv python install ${python_variant}
 
 #
 # dotfiles

@@ -132,6 +132,11 @@ RUN cd /home/${user_name} && \
   git clone --depth 1 ${dotfiles_repository} && \
   dotfiles/install.sh
 
+#
+# Claude Code
+#
+RUN curl -fsSL https://claude.ai/install.sh | bash
+
 WORKDIR /app
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["tail", "-F", "/dev/null"]

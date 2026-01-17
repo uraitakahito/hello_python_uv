@@ -35,6 +35,14 @@
     //
     // Python
     //
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/*.pyc": true,
+        "**/*.pyo": true,
+        "**/*.pyd": true,
+        "**/.pytest_cache": true,
+        "**/.Python": true
+    },
     // If a warning appears, please run "Python: Clear Workspace Interpreter Setting" from the command palette.
     "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
     // If you want to debug pytest in VSCode, please select `Debug Tests` from the `Testing` tab

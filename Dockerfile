@@ -19,7 +19,7 @@
 # ## Create a volume to persist the command history executed inside the Docker container:
 #
 # It is stored in the volume because the dotfiles configuration redirects the shell history there.
-#   https://github.com/uraitakahito/dotfiles/blob/b80664a2735b0442ead639a9d38cdbe040b81ab0/zsh/myzshrc#L298-L305
+# https://github.com/uraitakahito/dotfiles/blob/89b0c733d20b1c8b30ff55639d918259220f7765/config/zsh/conf.d/05-platform.zsh#L82-L91
 #
 #   docker volume create $PROJECT-zsh-history
 #

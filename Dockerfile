@@ -19,7 +19,7 @@
 # ## Create a volume to persist the command history executed inside the Docker container:
 #
 # It is stored in the volume because the dotfiles configuration redirects the shell history there.
-#   https://github.com/uraitakahito/dotfiles/blob/b80664a2735b0442ead639a9d38cdbe040b81ab0/zsh/myzshrc#L298-L305
+# https://github.com/uraitakahito/dotfiles/blob/89b0c733d20b1c8b30ff55639d918259220f7765/config/zsh/conf.d/05-platform.zsh#L82-L91
 #
 #   docker volume create $PROJECT-zsh-history
 #
@@ -27,14 +27,9 @@
 #
 # Start the Docker container(/run/host-services/ssh-auth.sock is a virtual socket provided by Docker Desktop for Mac.):
 #
-#   docker container run -d --rm --init -v /run/host-services/ssh-auth.sock:/run/host-services/ssh-auth.sock -e SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock --mount type=bind,src=`pwd`,dst=/app --mount type=volume,source=$PROJECT-zsh-history,target=/zsh-volume --name $PROJECT-container $PROJECT-image
+#   docker container run -d --rm --init -v /run/host-services/ssh-auth.sock:/run/host-services/ssh-auth.sock -e SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock -e GH_TOKEN=$(gh auth token) --mount type=bind,src=`pwd`,dst=/app --mount type=volume,source=$PROJECT-zsh-history,target=/zsh-volume --name $PROJECT-container $PROJECT-image
 #
-# ## Log in to Docker:
-#
-#   fdshell /bin/zsh
-#
-# About fdshell:
-#   https://github.com/uraitakahito/dotfiles/blob/37c4142038c658c468ade085cbc8883ba0ce1cc3/zsh/myzshrc#L93-L101
+# and log into the container.
 #
 # Only for the first startup, change the owner of the command history folder:
 #
@@ -50,9 +45,6 @@
 # 1. Open **Command Palette (Shift + Command + p)**
 # 2. Select **Dev Containers: Attach to Running Container**
 # 3. Open the `/app` directory
-#
-# For details:
-#   https://code.visualstudio.com/docs/devcontainers/attach-container#_attach-to-a-docker-container
 #
 
 # Debian 12.13
@@ -86,15 +78,15 @@ RUN cd /usr/src && \
 # Add user and install common utils.
 #
 RUN USERNAME=${user_name} \
-    USERUID=${user_id} \
-    USERGID=${group_id} \
-    CONFIGUREZSHASDEFAULTSHELL=true \
-    UPGRADEPACKAGES=false \
-    # When using ssh-agent inside Docker, add the user to the root group
-    # to ensure permission to access the mounted socket.
-    #   https://github.com/uraitakahito/features/blob/59e8acea74ff0accd5c2c6f98ede1191a9e3b2aa/src/common-utils/main.sh#L467-L471
-    ADDUSERTOROOTGROUP=true \
-      /usr/src/features/src/common-utils/install.sh
+  USERUID=${user_id} \
+  USERGID=${group_id} \
+  CONFIGUREZSHASDEFAULTSHELL=true \
+  UPGRADEPACKAGES=false \
+  # When using ssh-agent inside Docker, add the user to the root group
+  # to ensure permission to access the mounted socket.
+  #   https://github.com/uraitakahito/features/blob/59e8acea74ff0accd5c2c6f98ede1191a9e3b2aa/src/common-utils/main.sh#L467-L471
+  ADDUSERTOROOTGROUP=true \
+    /usr/src/features/src/common-utils/install.sh
 
 #
 # Install extra utils.
@@ -133,7 +125,18 @@ RUN cd /home/${user_name} && \
   dotfiles/install.sh
 
 #
+# Locale
+#
+# Required for Unicode characters (e.g., Nerd Fonts icons in Zsh prompt).
+# https://github.com/uraitakahito/dotfiles/blob/f504143a3eb9f93679edbb85d36754327eabfae7/config/zsh/conf.d/00-core.zsh#L13-L20
+#
+ENV LANG=C.UTF-8
+
+#
 # Claude Code
+#
+# Discussion about using nvm during Docker container build:
+#   https://stackoverflow.com/questions/25899912/how-to-install-nvm-in-docker
 #
 RUN curl -fsSL https://claude.ai/install.sh | bash
 

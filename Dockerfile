@@ -125,6 +125,14 @@ RUN cd /home/${user_name} && \
   dotfiles/install.sh
 
 #
+# Locale
+#
+# Required for Unicode characters (e.g., Nerd Fonts icons in Zsh prompt).
+# https://github.com/uraitakahito/dotfiles/blob/f504143a3eb9f93679edbb85d36754327eabfae7/config/zsh/conf.d/00-core.zsh#L13-L20
+#
+ENV LANG=C.UTF-8
+
+#
 # Claude Code
 #
 # Discussion about using nvm during Docker container build:

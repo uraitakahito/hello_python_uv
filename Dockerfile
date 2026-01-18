@@ -130,6 +130,9 @@ RUN cd /home/${user_name} && \
 #
 # Claude Code
 #
+# Discussion about using nvm during Docker container build:
+#   https://stackoverflow.com/questions/25899912/how-to-install-nvm-in-docker
+#
 RUN curl -fsSL https://claude.ai/install.sh | bash
 
 WORKDIR /app

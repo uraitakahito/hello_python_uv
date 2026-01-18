@@ -46,9 +46,6 @@
 # 2. Select **Dev Containers: Attach to Running Container**
 # 3. Open the `/app` directory
 #
-# For details:
-#   https://code.visualstudio.com/docs/devcontainers/attach-container#_attach-to-a-docker-container
-#
 
 # Debian 12.13
 FROM debian:bookworm-20260112

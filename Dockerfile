@@ -108,6 +108,18 @@ RUN curl --fail-early --silent --show-error --location https://astral.sh/uv/inst
   UV_INSTALL_DIR=/bin sh /tmp/uv-install.sh && \
   rm /tmp/uv-install.sh
 
+#
+# libatomic1
+#
+# Required for pyright to run Node.js.
+# pyright uses nodeenv to install Node.js, which depends on libatomic1.
+#
+RUN apt-get update -qq && \
+  apt-get install -y -qq --no-install-recommends \
+    libatomic1 && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
+
 COPY docker-entrypoint.sh /usr/local/bin/
 
 USER ${user_name}

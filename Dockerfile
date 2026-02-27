@@ -35,6 +35,10 @@
 # 2. Select Dev Containers: Attach to Running Container
 # 3. Open the /app directory
 #
+# Note: A "Default interpreter path '${workspaceFolder}/.venv/bin/python' could not be resolved"
+# warning may appear before opening the /app directory. This is because ${workspaceFolder}
+# is not yet resolved at that point. The warning disappears once you open the /app directory.
+#
 # For details:
 #   https://code.visualstudio.com/docs/devcontainers/attach-container#_attach-to-a-docker-container
 #

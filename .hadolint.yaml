@@ -1,0 +1,7 @@
+ignored:
+  # Use WORKDIR to switch to a directory
+  # https://github.com/hadolint/hadolint/wiki/DL3003
+  - DL3003
+  # Pin versions in apt-get install
+  # https://github.com/hadolint/hadolint/wiki/DL3008
+  - DL3008

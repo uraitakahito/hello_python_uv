@@ -106,6 +106,12 @@ RUN cd /usr/src && \
   git checkout ${extra_utils_commit} && \
   ADDEZA=true \
   ADDGRPCURL=true \
+  ADDHADOLINT=true \
+  \
+  ADDCLAUDECODE=true \
+  # Claude Code is installed under $HOME, so the username must be specified.
+  USERNAME=${user_name} \
+  \
   UPGRADEPACKAGES=false \
     /usr/src/extra-utils/utils/install.sh
 
@@ -156,14 +162,6 @@ RUN cd /home/${user_name} && \
 # https://github.com/uraitakahito/dotfiles/blob/f504143a3eb9f93679edbb85d36754327eabfae7/config/zsh/conf.d/00-core.zsh#L13-L20
 #
 ENV LANG=C.UTF-8
-
-#
-# Claude Code
-#
-# Discussion about using nvm during Docker container build:
-#   https://stackoverflow.com/questions/25899912/how-to-install-nvm-in-docker
-#
-RUN curl -fsSL https://claude.ai/install.sh | bash
 
 WORKDIR /app
 ENTRYPOINT ["docker-entrypoint.sh"]

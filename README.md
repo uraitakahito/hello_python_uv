@@ -2,7 +2,8 @@
 % uv run scripts/hello-numpy.py
 % uv run scripts/use-git-library.py
 % uv run pytest
-% uv run mypy src/hello_python_uve/prime.py
+% uv run ruff check && uv run ruff format --check
+% uv run mypy src/hello_python_uv/prime.py
 ```
 
 The Python version can be decided by looking [here](https://devguide.python.org/versions/).

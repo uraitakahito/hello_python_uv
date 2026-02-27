@@ -12,7 +12,7 @@ def is_prime(n: int) -> bool:
 
     while i * i <= n:
         if n % i == 0:
-          return False
+            return False
 
         i += 2
 

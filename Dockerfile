@@ -54,11 +54,15 @@ FROM debian:bookworm-20260202
 ARG user_name=developer
 ARG user_id
 ARG group_id
+# https://github.com/uraitakahito/dotfiles/releases/tag/1.0.0
 ARG dotfiles_repository="https://github.com/uraitakahito/dotfiles.git"
-# version 1.0.0
 ARG dotfiles_commit="61c0939b091432537631561facf67931682d0ff3"
+# https://github.com/uraitakahito/features/releases/tag/1.0.0
 ARG features_repository="https://github.com/uraitakahito/features.git"
+ARG features_commit="e8d887d2e17e79f5289b0e8a087dd0730dcad24e"
+# https://github.com/uraitakahito/extra-utils/releases/tag/1.0.0
 ARG extra_utils_repository="https://github.com/uraitakahito/extra-utils.git"
+ARG extra_utils_commit="3fb9cf4625cdd57270adc48ddf1b230cf151fdf0"
 ARG python_variant=3.13
 
 #
@@ -75,7 +79,9 @@ RUN apt-get update -qq && \
 # clone features
 #
 RUN cd /usr/src && \
-  git clone --depth 1 ${features_repository}
+  git clone ${features_repository} && \
+  cd features && \
+  git checkout ${features_commit}
 
 #
 # Add user and install common utils.
@@ -95,7 +101,9 @@ RUN USERNAME=${user_name} \
 # Install extra utils.
 #
 RUN cd /usr/src && \
-  git clone --depth 1 ${extra_utils_repository} && \
+  git clone ${extra_utils_repository} && \
+  cd extra-utils && \
+  git checkout ${extra_utils_commit} && \
   ADDEZA=true \
   ADDGRPCURL=true \
   UPGRADEPACKAGES=false \
@@ -136,7 +144,7 @@ RUN uv python install ${python_variant}
 # dotfiles
 #
 RUN cd /home/${user_name} && \
-  git clone --depth 1 ${dotfiles_repository} && \
+  git clone ${dotfiles_repository} && \
   cd dotfiles && \
   git checkout ${dotfiles_commit} && \
   ./install.sh

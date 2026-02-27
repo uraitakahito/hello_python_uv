@@ -70,8 +70,8 @@ ARG python_variant=3.13
 #
 RUN apt-get update -qq && \
   apt-get install -y -qq --no-install-recommends \
-    ca-certificates \
-    git && \
+    ca-certificates=20230311+deb12u1 \
+    git=1:2.39.5-0+deb12u3 && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
 

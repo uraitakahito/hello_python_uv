@@ -1,37 +1,44 @@
-# ## Features of this Dockerfile
+# Features of this Dockerfile
 #
 # - Not based on devcontainer; use by attaching VSCode to the container
 #   - https://code.visualstudio.com/docs/devcontainers/attach-container
+# - Claude Code is pre-installed
+# - Includes dotfiles and extra utilities
 # - Assumes host OS is Mac
+# - Passes the GH_TOKEN environment variable into the container
 #
-# ## Preparation
-#
-# ### Download the files required to build the Docker container
-#
-#   curl -L -O https://raw.githubusercontent.com/uraitakahito/hello_python_uv/refs/heads/main/Dockerfile
-#   curl -L -O https://raw.githubusercontent.com/uraitakahito/hello_python_uv/refs/heads/main/docker-entrypoint.sh
-#   chmod 755 docker-entrypoint.sh
-#
-# ## Build the Docker image:
+# Build the Docker image:
 #
 #   PROJECT=$(basename `pwd`) && docker image build -t $PROJECT-image . --build-arg user_id=`id -u` --build-arg group_id=`id -g`
 #
-# ## Create a volume to persist the command history executed inside the Docker container:
+# (First time only) Create a volume for command history:
 #
+# Create a volume to persist the command history executed inside the Docker container.
 # It is stored in the volume because the dotfiles configuration redirects the shell history there.
-# https://github.com/uraitakahito/dotfiles/blob/89b0c733d20b1c8b30ff55639d918259220f7765/config/zsh/conf.d/05-platform.zsh#L82-L91
+#   https://github.com/uraitakahito/dotfiles/blob/89b0c733d20b1c8b30ff55639d918259220f7765/config/zsh/conf.d/05-platform.zsh#L82-L91
 #
 #   docker volume create $PROJECT-zsh-history
 #
-# ## Run the Docker container:
+# Run the Docker container:
 #
 # Start the Docker container(/run/host-services/ssh-auth.sock is a virtual socket provided by Docker Desktop for Mac.):
 #
 #   docker container run -d --rm --init -v /run/host-services/ssh-auth.sock:/run/host-services/ssh-auth.sock -e SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock -e GH_TOKEN=$(gh auth token) --mount type=bind,src=`pwd`,dst=/app --mount type=volume,source=$PROJECT-zsh-history,target=/zsh-volume --name $PROJECT-container $PROJECT-image
 #
-# and log into the container.
+# Log into the container.
 #
-# Only for the first startup, change the owner of the command history folder:
+#   OR
+#
+# Connect from VS Code:
+#
+# 1. Open Command Palette (Shift + Command + P)
+# 2. Select Dev Containers: Attach to Running Container
+# 3. Open the /app directory
+#
+# For details:
+#   https://code.visualstudio.com/docs/devcontainers/attach-container#_attach-to-a-docker-container
+#
+# (First time only) change the owner of the command history folder:
 #
 #   sudo chown -R $(id -u):$(id -g) /zsh-volume
 #
@@ -39,12 +46,6 @@
 #
 #   uv run scripts/hello-numpy.py
 #   uv run pytest
-#
-# ## Connect from Visual Studio Code
-#
-# 1. Open **Command Palette (Shift + Command + p)**
-# 2. Select **Dev Containers: Attach to Running Container**
-# 3. Open the `/app` directory
 #
 
 # Debian 12.13

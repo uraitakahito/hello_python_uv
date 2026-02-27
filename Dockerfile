@@ -55,6 +55,8 @@ ARG user_name=developer
 ARG user_id
 ARG group_id
 ARG dotfiles_repository="https://github.com/uraitakahito/dotfiles.git"
+# version 1.0.0
+ARG dotfiles_commit="61c0939b091432537631561facf67931682d0ff3"
 ARG features_repository="https://github.com/uraitakahito/features.git"
 ARG extra_utils_repository="https://github.com/uraitakahito/extra-utils.git"
 ARG python_variant=3.13
@@ -135,7 +137,9 @@ RUN uv python install ${python_variant}
 #
 RUN cd /home/${user_name} && \
   git clone --depth 1 ${dotfiles_repository} && \
-  dotfiles/install.sh
+  cd dotfiles && \
+  git checkout ${dotfiles_commit} && \
+  ./install.sh
 
 #
 # Locale

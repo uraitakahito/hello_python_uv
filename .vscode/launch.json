@@ -12,8 +12,6 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "cwd": "${fileDirname}",
-            // "python": "${workspaceFolder}/.venv/bin/python"
-            "python": "${config:python.defaultInterpreterPath}",
             // When omitted or set to true (the default), restricts debugging to user-written code only.
             // Set to false to also enable debugging of standard library functions.
             "justMyCode": false
@@ -25,7 +23,6 @@
             "program": "${workspaceFolder}/scripts/hello-args.py",
             "args": ["1", "2", "da"],
             "console": "integratedTerminal",
-            "python": "${config:python.defaultInterpreterPath}",
             // When omitted or set to true (the default), restricts debugging to user-written code only.
             // Set to false to also enable debugging of standard library functions.
             "justMyCode": false

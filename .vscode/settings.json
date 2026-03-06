@@ -69,7 +69,6 @@
     // https://code.visualstudio.com/docs/configure/themes#_editor-semantic-highlighting
     "editor.semanticHighlighting.enabled": true,
     "python.analysis.supportRestructuredText": true,
-    "python.analysis.typeCheckingMode": "strict",
 
     //
     // Ruff

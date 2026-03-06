@@ -54,7 +54,6 @@
         "generateDocstring": true
     },
     "python.analysis.autoFormatStrings": true,
-    "python.analysis.autoSearchPaths": true,
     "python.analysis.completeFunctionParens": true,
     "python.analysis.diagnosticMode": "openFilesOnly",
     "python.analysis.displayEnglishDiagnostics": true,

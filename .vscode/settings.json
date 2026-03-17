@@ -52,7 +52,7 @@
     // If you want to debug pytest in VSCode, please select `Debug Tests` from the `Testing` tab
     "python.testing.pytestEnabled": true,
     //
-    // Plylance
+    // Pylance
     //
     "python.analysis.aiCodeActions": {
         "implementAbstractClasses": true,

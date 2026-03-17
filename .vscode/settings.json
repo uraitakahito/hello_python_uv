@@ -9,6 +9,8 @@
     //
     // https://code.visualstudio.com/docs/editor/codebasics#_how-do-i-turn-on-word-wrap
     "editor.wordWrap": "on",
+    // https://code.visualstudio.com/docs/configure/themes#_editor-semantic-highlighting
+    "editor.semanticHighlighting.enabled": true,
 
     //
     // Copilot Next Edit Suggestions (Preview)
@@ -66,8 +68,6 @@
     "python.analysis.inlayHints.pytestParameters": true,
     "python.analysis.inlayHints.variableTypes": true,
     "python.analysis.languageServerMode": "full",
-    // https://code.visualstudio.com/docs/configure/themes#_editor-semantic-highlighting
-    "editor.semanticHighlighting.enabled": true,
     "python.analysis.supportRestructuredText": true,
 
     //

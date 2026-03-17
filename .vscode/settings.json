@@ -43,7 +43,8 @@
         "**/*.pyo": true,
         "**/*.pyd": true,
         "**/.pytest_cache": true,
-        "**/.Python": true
+        "**/.Python": true,
+        "**/.ruff_cache": true
     },
 
     // Not needed: VS Code Python extension auto-discovers .venv in the workspace root.

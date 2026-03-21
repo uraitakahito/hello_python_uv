@@ -6,17 +6,24 @@ on:
       - main
       - develop
     paths:
-      - 'Dockerfile'
+      - 'Dockerfile.dev'
+      - 'Dockerfile.release'
       - '.hadolint.yaml'
   pull_request:
     paths:
-      - 'Dockerfile'
+      - 'Dockerfile.dev'
+      - 'Dockerfile.release'
       - '.hadolint.yaml'
 
 jobs:
   hadolint:
-    name: Lint Dockerfile
+    name: Lint ${{ matrix.dockerfile }}
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        dockerfile:
+          - Dockerfile.dev
+          - Dockerfile.release
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -24,4 +31,4 @@ jobs:
       - name: Run hadolint
         uses: hadolint/hadolint-action@v3.1.0
         with:
-          dockerfile: Dockerfile
+          dockerfile: ${{ matrix.dockerfile }}

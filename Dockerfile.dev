@@ -9,7 +9,7 @@
 #
 # Build the Docker image:
 #
-#   PROJECT=$(basename `pwd`) && docker image build -t $PROJECT-image . --build-arg user_id=`id -u` --build-arg group_id=`id -g`
+#   PROJECT=$(basename `pwd`) && docker image build -f Dockerfile.dev -t $PROJECT-image . --build-arg user_id=`id -u` --build-arg group_id=`id -g`
 #
 # (First time only) Create a volume for command history:
 #

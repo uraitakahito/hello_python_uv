@@ -1,0 +1,81 @@
+# Features of this Dockerfile
+#
+# - Lightweight release image based on python:3.13-slim
+# - Two-stage build: git and uv are only used in the builder stage
+# - Dev dependencies (pyright, pytest, ruff) are excluded
+# - Runs as non-root user (appuser)
+# - Default command runs scripts/hello-numpy.py
+#
+# Build the Docker image:
+#
+#   docker image build -f Dockerfile.release -t hello-python-uv-release .
+#
+# Run the Docker container:
+#
+#   docker container run --rm hello-python-uv-release
+#
+# Run a different script:
+#
+#   docker container run --rm hello-python-uv-release python scripts/use-git-library.py
+#
+
+# ----------------------------------------------------------
+# Stage 1: Build dependencies
+# ----------------------------------------------------------
+FROM python:3.13-slim AS builder
+
+# Copy uv from official image
+# https://docs.astral.sh/uv/guides/integration/docker/#installing-uv
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
+
+# git is required for git-based dependencies in pyproject.toml
+RUN apt-get update -qq && \
+  apt-get install -y -qq --no-install-recommends \
+    git && \
+  apt-get clean && \
+  rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy dependency files first for layer caching
+# https://docs.astral.sh/uv/guides/integration/docker/#intermediate-layers
+COPY pyproject.toml uv.lock .python-version ./
+
+# Sync production dependencies only (creates .venv in /app/.venv)
+RUN uv sync --frozen --no-dev --no-install-project
+
+# Copy application source
+COPY src/ src/
+COPY scripts/ scripts/
+
+# Install the project itself
+RUN uv sync --frozen --no-dev
+
+# ----------------------------------------------------------
+# Stage 2: Runtime
+# ----------------------------------------------------------
+FROM python:3.13-slim
+
+# Create non-root user
+RUN groupadd --gid 1000 appuser && \
+  useradd --uid 1000 --gid 1000 --create-home appuser
+
+WORKDIR /app
+
+# Copy virtual environment and application from builder
+COPY --from=builder /app/.venv /app/.venv
+COPY --from=builder /app/src /app/src
+COPY --from=builder /app/scripts /app/scripts
+
+# Copy entrypoint and version
+COPY docker-entrypoint.sh /usr/local/bin/
+COPY VERSION /app/
+
+# Ensure venv binaries are on PATH
+ENV PATH="/app/.venv/bin:$PATH"
+
+# Switch to non-root user
+USER appuser
+
+ENTRYPOINT ["docker-entrypoint.sh"]
+CMD ["python", "scripts/hello-numpy.py"]

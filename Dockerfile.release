@@ -8,15 +8,15 @@
 #
 # Build the Docker image:
 #
-#   docker image build -f Dockerfile.release -t hello-python-uv-release .
+#   PROJECT=$(basename `pwd`) && VERSION=$(cat VERSION) && docker image build -f Dockerfile.release -t ${PROJECT}:${VERSION} -t ${PROJECT}:latest .
 #
 # Run the Docker container:
 #
-#   docker container run --rm hello-python-uv-release
+#   PROJECT=$(basename `pwd`) && docker container run --rm ${PROJECT}:latest
 #
 # Run a different script:
 #
-#   docker container run --rm hello-python-uv-release python scripts/use-git-library.py
+#   docker container run --rm ${PROJECT}:latest python scripts/use-git-library.py
 #
 
 # ----------------------------------------------------------
